@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/moments/moments",
+    "pages/add/add",
+    "pages/me/me",
+    "pages/slide-item/slide-item",
+    "templates/toast/toast"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#db9019",
+    "navigationBarTitleText": "To Do List",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#db9019",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Index"
+      },
+      {
+        "pagePath": "pages/slide-item/slide-item",
+        "text": "Moments"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "Me"
+      }
+    ]
+  },
+  "resizable": true,
+  "sitemapLocation": "sitemap.json"
+}

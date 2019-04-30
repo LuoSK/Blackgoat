@@ -1,0 +1,3 @@
+<view wx:for="{{list}}">
+  {{item.due}}
+</view>

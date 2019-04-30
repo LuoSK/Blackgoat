@@ -1,0 +1,109 @@
+<wxs src="../../tools/tool.wxs" module="tool" />
+<import src="../../templates/toast/toast.wxml" />
+<!-- Add the task page //添加页面-->
+<view class="add-page" hidden='{{pageflag}}'>
+  <view class="add-window">
+    <scroll-view scroll-y="true" scroll-with-animation="true" style='height:990rpx'>
+      <view class="margin-add">
+        <!-- Title //任务标题-->
+        <view class="line-style">
+          <image class="icon-style" src="/images/title-icon.png" />
+          <input class="input-content" placeholder="在这里输入任务标题" bindinput="Tinput" value='{{titlevalue}}'></input>
+        </view>
+        <!-- Content //任务内容-->
+        <view class="line-style">
+          <image class="icon-style" src="/images/content-icon.png" />
+          <input class="input-content" placeholder="在这里输入任务详细内容（选填）" bindinput='Cinput' value='{{contentvalue}}'></input>
+        </view>
+        <!-- Date //日期选择-->
+        <view class="line-style">
+          <image class="icon-style" src="/images/calendar.png" />
+          <input class="input-content" placeholder="日期选择器"></input>
+        </view>
+
+        <view class="repeat">
+          <view class="r-view {{TodayOnShow == true ? 'repeat-clicked':''}}" catchtap='r_today'>
+            今天
+          </view>
+          <view class="r-view {{TomorrowOnShow == true ? 'repeat-clicked':''}}" catchtap='r_tomorrow'>
+            明天
+          </view>
+          <view class="r-view {{EdayOnShow == true ? 'repeat-clicked':''}}" catchtap='r_everyday'>
+            每天
+          </view>
+          <view class="r-view {{WeekOnShow == true ? 'repeat-clicked':''}}" catchtap='r_week'>
+            每周
+          </view>
+          <view class="r-view {{EmonthOnShow == true ? 'repeat-clicked':''}}" catchtap='r_month'>
+            每月
+          </view>
+          <view class="r-view {{CalendarOnShow == true ? 'repeat-clicked':''}}" catchtap='r_defined'>
+            自定义
+          </view>
+        </view>
+        <!--每周-->
+
+        <view class="repeat" hidden="{{!WeekOnShow}}">
+          <block wx:for="{{weekls_cn}}" wx:key="index">
+            <view class="wlist {{weekls_cn[index].flag==true ? 'week-clicked' : ''}}" catchtap='week_click' data-idx="{{index}}">{{item.val}}</view>
+          </block>
+        </view>
+        <!--每月-->
+        <view class="repeatMonth" hidden="{{!EmonthOnShow}}">
+          <block wx:for="{{everymonth}}" wx:key="index">
+            <view class="day-style">
+              <view class="Emonth {{everymonth[index].flag==true ? 'Emonth-clicked':''}}" catchtap='Emonth_click' data-idx="{{index}}">{{item.val}}</view>
+            </view>
+          </block>
+        </view>
+        <!--日历-->
+
+        <view class="calendar" hidden='{{!CalendarOnShow}}'>
+          <view>
+            <image src='/images/arr-left.png' class="arrow" catchtap="month_click" data-value="-1"></image>
+            <text>{{cur_month+1}} 月</text>
+            <image src='/images/arr-right.png' class="arrow" catchtap="month_click" data-value="1"></image>
+          </view>
+          <view>
+            <image src='/images/arr-left.png' class="arrow" catchtap="year_click" data-value="-1"></image>
+            <text>{{cur_year}} 年</text>
+            <image src='/images/arr-right.png' class="arrow" catchtap="year_click" data-value="1"></image>
+
+          </view>
+          <!--Weeklist-->
+          <view class="weeklist">
+            <view class="week-style" wx:for="{{weeklist}}" wx:key="index" style="color:#db9019">
+              <view hover-class>{{item}}</view>
+            </view>
+          </view>
+          <view>
+            <!--Last Month Day List-->
+            <view class="day-style" wx:for="{{lastMonthlist}}" wx:key="index" style="color:#CBC9D5;">
+              <view class="day-radius" hover-class="day-click">{{item}}</view>
+            </view>
+            <!--current Month Day List--->
+            <block wx:for="{{curMonthlist}}" wx:key="index">
+              <view class="day-style" style="color: #2E2E39;">
+                <view class="day-radius {{tool.findDate(cur_year,cur_month+1,item,def_Date) == 1 ? 'day-click' : ''}}" data-year="{{cur_year}}" data-month="{{cur_month+1}}" data-day="{{item}}" catchtap="defined_click">{{item}}</view>
+
+              </view>
+
+
+
+            </block>
+            <!--next Month Day List-->
+            <block wx:for="{{nextMonthlist}}" wx:key="index">
+              <view class="day-style" style="color:#CBC9D5;">
+                <view class="day-radius" hover-class="day-click">{{item}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <button class="confirm" bindtap='confirm'>确定</button>
+</view>
+
+
+<template is="toast" data="{{toastHidden}}"></template>

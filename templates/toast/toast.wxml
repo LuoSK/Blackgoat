@@ -1,0 +1,11 @@
+<template name="toast">
+  <view class="modal {{toastHidden==false ? 'show':''}}">
+    <view class="dialog">
+      <view class="error">
+        <image class="error-image" src="/images/error.png"></image>
+        <text class="error-text"> 不能为空 </text>
+      </view>
+    </view>
+  </view>
+
+</template>

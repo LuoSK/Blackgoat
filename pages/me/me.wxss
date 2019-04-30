@@ -1,0 +1,46 @@
+.calendar {
+  width: 750rpx;
+}
+
+.arrow {
+  width: 30rpx;
+  height: 30rpx;
+  margin: 0 30rpx;
+}
+
+.weeklist {
+  display: block;
+}
+
+.week-style {
+  width: 14.285%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 107.1rpx;
+}
+
+.day-style {
+  width: 107.1rpx;
+  height: 107.1rpx;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.day-radius {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70rpx;
+  height: 70rpx;
+ 
+}
+.day-click {
+  background: #f1c071;
+  border-radius: 50%;
+  color: #ffffff
+}
+

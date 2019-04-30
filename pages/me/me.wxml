@@ -1,0 +1,39 @@
+
+  <view class="calendar">
+    <view>
+      <image src='/images/arr-left.png' class="arrow" catchtap="month_click" data-value="-1"></image>
+      <text>{{cur_month+1}} 月</text>
+      <image src='/images/arr-right.png' class="arrow" catchtap="month_click" data-value="1"></image>
+    </view>
+    <view>
+      <image src='/images/arr-left.png' class="arrow" catchtap="year_click" data-value="-1"></image>
+      <text>{{cur_year}} 年</text>
+      <image src='/images/arr-right.png' class="arrow" catchtap="year_click" data-value="1"></image>
+
+    </view>
+    <!--Weeklist-->
+    <view class="weeklist">
+      <view class="week-style" wx:for="{{weeklist}}" style="color:#db9019">
+        <view hover-class>{{item}}</view>
+      </view>
+    </view>
+    <view>
+      <!--Last Month Day List-->
+      <view class="day-style" wx:for="{{lastMonthlist}}" style="color:#CBC9D5;">
+        <view class="day-radius" hover-class="day-click">{{item}}</view>
+      </view>
+      <!--current Month Day List--->
+      <block wx:for="{{curMonthlist}}">
+        <view class="day-style" style="color: #2E2E39;">
+          <view class="day-radius" hover-class="day-click">{{item}}</view>
+        </view>
+      </block>
+      <!--next Month Day List-->
+      <block wx:for="{{nextMonthlist}}">
+        <view class="day-style" style="color:#CBC9D5;">
+          <view class="day-radius" hover-class="day-click">{{item}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+

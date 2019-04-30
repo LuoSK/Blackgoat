@@ -1,0 +1,137 @@
+/* pages/add/add.wxss */
+@import "../me/me.wxss";
+@import "../../templates/toast/toast.wxss";
+
+.add-page {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #f6f7fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.margin-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-window {
+  margin-top: 20rpx;
+  background: #fff;
+  width: 90%;
+  height: 1000rpx;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line-style {
+  width: 92%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.icon-style {
+  width: 55rpx;
+  height: 50rpx;
+  opacity: 0.8;
+}
+
+.input-content {
+  height: 100rpx;
+  background: #fff;
+  margin-left: 20rpx;
+  width: 100%;
+}
+
+.confirm {
+  bottom: 20rpx;
+  position: fixed;
+  width: 80%;
+  height: 100rpx;
+  background: #fcb035;
+}
+
+.repeat {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.repeatMonth {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.r-view {
+  display: flex;
+  background: #cbc9d5;
+  width: 25%;
+  height: 80rpx;
+  justify-content: center;
+  align-items: center;
+  color: #2f2f4d;
+  margin: 10rpx;
+}
+
+.wlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #2f2f4d;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  font-size: 30rpx;
+  color: #2f2f4d;
+  margin: 10rpx 0;
+}
+
+.week-clicked {
+  background: #fcb035;
+  border: 1px solid #fcb035;
+  color: #f6f7fb;
+}
+
+.Emonth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.Emonth-clicked {
+  background: #fcb035;
+  color: #f6f7fb;
+  border-radius: 50%;
+}
+
+.repeat-clicked {
+  background: #fcb035;
+  color: #fff;
+}
+
+text {
+  font-family: Helvetica;
+  font-size: 16px;
+  color: #2f2f4d;
+  text-align: left;
+  opacity: 0.9;
+}
+
+.text-style {
+  border: 1px solid #fcb035;
+  width: 20px;
+  height: 20px;
+}

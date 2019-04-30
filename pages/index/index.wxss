@@ -1,0 +1,100 @@
+.title {
+  background-color: #fff;
+  width: 650rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+  transition: height 0.5s;
+  line-height: 1.6;
+}
+
+.active {
+  height: 500rpx;
+  transition: 0.5s;
+}
+
+.tline {
+  margin-top: 2px;
+  opacity: 0.1;
+  background-color: #2f2f4d;
+  width: 90%;
+  height: 2px;
+}
+
+.tolist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.add-style {
+  position: fixed;
+  bottom: 30rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.add-button {
+  display: flex;
+  justify-content: center;
+}
+
+text {
+  font-family: Helvetica;
+  font-size: 16px;
+  color: #2f2f4d;
+  text-align: left;
+  opacity: 0.9;
+}
+
+.movable-wrap {
+  width: 650rpx;
+  margin: 20rpx 0;
+  display: inline-flex;
+}
+
+movable-area {
+  height: 70rpx;
+  width: 550rpx;
+}
+
+movable-view {
+  width: 650rpx;
+  height: 70rpx;
+}
+
+.delete {
+  margin-left: 25rpx;
+  width: 70rpx;
+  background: #e66671;
+  text-align: center;
+  border-radius: 11rpx;
+  font-size: 20rpx;
+  line-height: 70rpx;
+  color: #fff;
+}
+
+.timeline {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 750rpx;
+  
+}
+.timeline-wrap{
+  width: 50rpx;
+  display: flex;
+  justify-content: center;
+}
+.timeline-point {
+  width: 30rpx;
+  height: 30rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 10rpx solid salmon;
+  box-shadow:0px 1px 1px 0px rgba(209, 144, 137,0.6);
+  
+}
+.timeline-vertical{
+  height: 110rpx;
+  border-right: 1.4px solid #ccc;
+}

@@ -1,0 +1,47 @@
+<wxs src="../../tools/tool.wxs" module="tool" />
+<!-- Task list page //任务列表-->
+<scroll-view scroll-y="true" scroll-with-animation="true" scroll-top="{{ScrollNum}}" enable-back-to-top="true" style='height:1100rpx'>
+  <view class="tolist">
+
+    <view wx:if="{{list.length == 0}}" bindtap="test" class="test">啥都没有</view>
+    <block wx:for="{{list}}" wx:key="index">
+      <view wx:if="{{(index != 0) && (list[index].due != list[index-1].due)}}">
+        <view class="timeline">
+          <view class="timeline-wrap">
+            <view class='timeline-point'></view>
+          </view>
+          <view>{{item.year}} 年 {{item.month}} 月 {{item.day}} 日 星期{{tool.numTochn(item.week)}}
+          </view>
+        </view>
+      </view>
+      <view wx:elif="{{index == 0}}">
+        <view class="timeline">
+          <view class="timeline-wrap">
+            <view class='timeline-point'></view>
+          </view>
+          <view>{{item.year}} 年 {{item.month}} 月 {{item.day}} 日 星期{{tool.numTochn(item.week)}} </view>
+        </view>
+      </view>
+      <view class="timeline">
+        <view class="timeline-wrap">
+          <view class="timeline-vertical"></view>
+        </view>
+        <view class="movable-wrap">
+          <movable-area>
+            <movable-view direction="horizontal" out-of-bounds="true" x="{{item.xmove}}" inertia="true" data-movIndex="{{index}}" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindchange="handleMovableChange" friction="20" damping="30">
+              <view data-index="{{index}}" class="title {{ fold[index]==false ? 'active' : '' }} ">
+                <text>{{item.title}}</text>
+              </view>
+            </movable-view>
+          </movable-area>
+          <view class="delete" data-delete_index="{{index}}" data-id="{{item._id}}" bindtap="handleDeleteList">Dele</view>
+        </view>
+      </view>
+    </block>
+
+  </view>
+</scroll-view>
+<!-- Button to add a task //添加按钮-->
+<view class="add-button" bindtap='addtap'>
+  <image src="/images/addition.png" class="add-style"></image>
+</view>
