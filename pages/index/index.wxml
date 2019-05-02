@@ -1,6 +1,6 @@
 <wxs src="../../tools/tool.wxs" module="tool" />
 <!-- Task list page //任务列表-->
-<scroll-view scroll-y="true" scroll-with-animation="true" scroll-top="{{ScrollNum}}" enable-back-to-top="true" style='height:1100rpx'>
+<scroll-view scroll-y="true" scroll-with-animation="true" scroll-top="{{ScollNum}}" scroll-into-view="{{toView}}" enable-back-to-top="true" style='height:1100rpx' bindscroll="scroll" class="scrollStyle">
   <view class="tolist">
 
     <view wx:if="{{list.length == 0}}" bindtap="test" class="test">啥都没有</view>
@@ -10,8 +10,16 @@
           <view class="timeline-wrap">
             <view class='timeline-point'></view>
           </view>
-          <view>{{item.year}} 年 {{item.month}} 月 {{item.day}} 日 星期{{tool.numTochn(item.week)}}
-          </view>
+          <block wx:if="{{item.year == cur_year && item.month == cur_month && item.day == cur_day}}">
+            <view id="today">
+              <view class="todaySticky static">今天</view>
+            </view>
+            <view class="todaySticky fixTop" wx:if="{{fixTop<scrollTop}}" bindtap="scrollIntoToday">↑今天</view>
+            <view class="todaySticky fixBottom" wx:elif="{{fixBottom-550>scrollTop}}" bindtap="scrollIntoToday">↓今天</view>
+          </block>
+          <view wx:else class="dateLabel">{{item.year}} 年 {{item.month}} 月 {{item.day}} 日 星期{{tool.numTochn(item.week)}}</view>
+
+
         </view>
       </view>
       <view wx:elif="{{index == 0}}">
@@ -19,7 +27,7 @@
           <view class="timeline-wrap">
             <view class='timeline-point'></view>
           </view>
-          <view>{{item.year}} 年 {{item.month}} 月 {{item.day}} 日 星期{{tool.numTochn(item.week)}} </view>
+          <view class="dateLabel">{{item.year}} 年 {{item.month}} 月 {{item.day}} 日 星期{{tool.numTochn(item.week)}} </view>
         </view>
       </view>
       <view class="timeline">

@@ -7,43 +7,84 @@ Page({
     list: [],
     fold: [],
     ScrollNum: 0,
+    fixTop: '',
+    fixBottom: '',
+    toView: '',
+    scrollTop: 0,
+    cur_year: new Date().getFullYear(),
+    cur_month: new Date().getMonth() + 1,
+    cur_day: new Date().getDate()
+  },
+
+
+  onShow: function() {
+
+
+
+
+
 
   },
-  onShow: function() {
+  onReady: function() {
+    this.setData({
+      toView: '',
+      fixTop: '',
+      fixBottom: ''
+    })
+    //Promise 风格
     wx.cloud.init()
     const db = wx.cloud.database({})
-
-    db.collection('todos').count({
-      success: res => {
-        var list = []
-        const batchTimes = Math.ceil(res.total / 20)
-        for (let i = 0; i < batchTimes; i++) {
-          const arr = []
-          db.collection('todos').skip(i * 20).limit(20).get({
-            success: res => {
-              list = list.concat(res.data)
-              let len = list.length
-              for (let i = 0; i < len; i++) {
-                for (let j = 0; j < len - i - 1; j++) {
-                  if (list[j].due > list[j + 1].due) {
-                    let temp = 0
-                    temp = list[j]
-                    list[j] = list[j + 1]
-                    list[j + 1] = temp
-                  }
-                }
-              } //
-              this.setData({
-                list: list
-              })
+    db.collection('todos').count().then(res => {
+      var list = []
+      const batchTimes = Math.ceil(res.total / 20)
+      for (let i = 0; i < batchTimes; i++) {
+        const arr = []
+        db.collection('todos').skip(i * 20).limit(20).get().then(res => {
+          //对获取的数据按事件顺序排序
+          list = list.concat(res.data)
+          let len = list.length
+          for (let i = 0; i < len; i++) {
+            for (let j = 0; j < len - i - 1; j++) {
+              if (list[j].due > list[j + 1].due) {
+                let temp = 0
+                temp = list[j]
+                list[j] = list[j + 1]
+                list[j + 1] = temp
+              }
             }
+          }
+          this.setData({
+            list: list
           })
-        }
+          // 获取view(今天)的窗口位置
+          let that = this;
+          wx.createSelectorQuery().select('.static').boundingClientRect(function(res) {
+            console.log(res)
+            that.setData({
+              fixTop: res.bottom,
+              fixBottom: res.top
+            })
+          }).exec()
+
+        })
       }
+      this.setData({
+        toView: 'today',
+
+      })
+
     })
   },
+  scroll: function(e) {
+    //吸顶
 
-
+    let that = this,
+      top = e.detail.scrollTop;
+    console.log(top)
+    that.setData({
+      scrollTop: top
+    })
+  },
 
   /*任务卡片展开*/
   rotateAnim: function(e) {
@@ -141,7 +182,13 @@ Page({
     })
     db.collection('todos').doc(id).remove()
   },
-  test: function() {
-    console.log(new Date('2019/04/17'))
-  }
+  //点击返回到当天
+  scrollIntoToday: function() {
+    this.setData({
+      toView: 'today'
+    })
+  },
+
+
+
 })

@@ -1,3 +1,6 @@
+.scrollStyle {
+}
+
 .title {
   background-color: #fff;
   width: 650rpx;
@@ -26,6 +29,7 @@
   align-items: center;
   width: 100%;
 }
+
 .add-style {
   position: fixed;
   bottom: 30rpx;
@@ -78,23 +82,67 @@ movable-view {
   justify-content: flex-start;
   align-items: center;
   width: 750rpx;
-  
 }
-.timeline-wrap{
+
+.timeline-wrap {
   width: 50rpx;
   display: flex;
   justify-content: center;
 }
+
 .timeline-point {
   width: 30rpx;
   height: 30rpx;
   box-sizing: border-box;
   border-radius: 50%;
   border: 10rpx solid salmon;
-  box-shadow:0px 1px 1px 0px rgba(209, 144, 137,0.6);
-  
+  box-shadow: 0px 1px 1px 0px rgba(209, 144, 137, 0.6);
 }
-.timeline-vertical{
+
+.timeline-vertical {
   height: 110rpx;
-  border-right: 1.4px solid #ccc;
+  border-right: 0.6px solid #ccc;
+}
+
+.todaySticky {
+  border-radius: 10rpx;
+  background: #e66671;
+  color: whitesmoke;
+  font-size: 14px;
+  padding: 0 20rpx;
+  height: 53rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10rpx 0;
+}
+
+.todaySticky.fixTop {
+  position: fixed;
+  top: 10px;
+  z-index: 999;
+  right: 40px;
+  padding: 0 20rpx 0 8rpx;
+}
+
+.todaySticky.fixBottom {
+  position: fixed;
+  bottom: 10px;
+  z-index: 999;
+  right: 40px;
+  padding: 0 20rpx 0 8rpx;
+}
+
+.dateLabel {
+  border-radius: 10rpx;
+  background: #e68e66;
+  color: whitesmoke;
+  font-size: 14px;
+  padding: 0 20rpx;
+  height: 53rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  margin: 10rpx 0;
 }
