@@ -180,6 +180,18 @@ Page({
       list: list,
       fold: fold
     })
+    let that = this;
+    wx.createSelectorQuery().select('.static').boundingClientRect(function(res) {
+      console.log(res)
+      that.setData({
+        fixTop: res.bottom,
+        fixBottom: res.top
+      })
+    }).exec()
+
+
+
+
     db.collection('todos').doc(id).remove()
   },
   //点击返回到当天

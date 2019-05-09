@@ -5,7 +5,8 @@
     "pages/add/add",
     "pages/me/me",
     "pages/slide-item/slide-item",
-    "templates/toast/toast"
+    "templates/toast/toast",
+    "components/tabbar/tabbar"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,10 +24,7 @@
         "pagePath": "pages/index/index",
         "text": "Index"
       },
-      {
-        "pagePath": "pages/slide-item/slide-item",
-        "text": "Moments"
-      },
+     
       {
         "pagePath": "pages/me/me",
         "text": "Me"
