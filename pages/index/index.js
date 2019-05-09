@@ -1,3 +1,4 @@
+const app = getApp();
 Page({
 
   /**
@@ -7,6 +8,7 @@ Page({
     list: [],
     fold: [],
     ScrollNum: 0,
+    tabbar: {},
     fixTop: '',
     fixBottom: '',
     toView: '',
@@ -17,13 +19,8 @@ Page({
   },
 
 
-  onShow: function() {
-
-
-
-
-
-
+  onLoad: function() {
+    app.editTabbar()
   },
   onReady: function() {
     this.setData({

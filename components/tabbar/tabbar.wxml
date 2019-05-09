@@ -1,3 +1,0 @@
-<view class="tabbar-box" style="background-color:{{tabbar.backgroundColor}}">
-<block></block>
-</view>

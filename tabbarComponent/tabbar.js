@@ -1,3 +1,4 @@
+const app = getApp();
 Component({
   properties: {
     tabbar: {
@@ -5,7 +6,7 @@ Component({
       value: {
         "backgroundColor": "#ffffff",
         "color": "#979795",
-        "selectedColor": "#db9019",
+        "selectedColor": "#1c1c1b",
         "list": [{
             "pagePath": "pages/index/index",
             "text": "时间轴"
@@ -13,6 +14,7 @@ Component({
           {
             "pagePath": "pages/add/add",
             "text": "添加",
+            "iconPath": "images/addition.png",
             "isSpecial": true
           },
           {
@@ -23,5 +25,8 @@ Component({
       }
 
     }
+  },
+  data: {
+   // isIphoneX: app.globalData.systemInfo.model.includes('iPhone X')
   }
 })

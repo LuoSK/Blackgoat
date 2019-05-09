@@ -38,7 +38,7 @@
           <movable-area>
             <movable-view direction="horizontal" out-of-bounds="true" x="{{item.xmove}}" inertia="true" data-movIndex="{{index}}" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindchange="handleMovableChange" friction="20" damping="30">
               <view data-index="{{index}}" class="title {{ fold[index]==false ? 'active' : '' }} ">
-                <text>{{item.title}}</text>
+                <text class="title-text">{{item.title}}</text>
               </view>
             </movable-view>
           </movable-area>
@@ -49,7 +49,10 @@
 
   </view>
 </scroll-view>
-<!-- Button to add a task //添加按钮-->
+<!-- Button to add a task 
 <view class="add-button" bindtap='addtap'>
   <image src="/images/addition.png" class="add-style"></image>
 </view>
+//添加按钮-->
+<!-- Tabbar -->
+<tabbar tabbar="{{tabbar}}"></tabbar>

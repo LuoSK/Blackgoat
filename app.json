@@ -5,8 +5,7 @@
     "pages/add/add",
     "pages/me/me",
     "pages/slide-item/slide-item",
-    "templates/toast/toast",
-    "components/tabbar/tabbar"
+    "templates/toast/toast"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,7 +16,7 @@
   },
   "tabBar": {
     "color": "#000000",
-    "selectedColor": "#db9019",
+    "selectedColor": "#1c1c1b",
     "borderStyle": "black",
     "list": [
       {

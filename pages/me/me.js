@@ -1,10 +1,13 @@
+const app = getApp();
 Page({
   data: {
     weeklist: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
     cur_month: 0,
-    cur_year: 0
+    cur_year: 0,
+    tabbar: {}
   },
   onLoad: function() {
+    app.editTabbar();
     var that = this;
     var cur_year = new Date().getFullYear();
     var cur_month = new Date().getMonth();
