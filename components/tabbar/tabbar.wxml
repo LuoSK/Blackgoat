@@ -1,2 +1,3 @@
-<!--components/tabbar/tabbar.wxml-->
-<text>components/tabbar/tabbar.wxml</text>
+<view class="tabbar-box" style="background-color:{{tabbar.backgroundColor}}">
+<block></block>
+</view>
