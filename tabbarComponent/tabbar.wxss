@@ -30,7 +30,7 @@
 .special-wrapper {
   position: absolute;
   left: 77rpx;
-  top: -36rpx;
+  top: -46rpx;
   width: 96rpx;
   height: 96rpx;
   border-radius: 50%;
@@ -41,8 +41,8 @@
 }
 
 .special-wrapper .tabbar-icon {
-  width: 84rpx;
-  height: 84rpx;
+  width: 92rpx;
+  height: 92rpx;
 }
 .special-text-wrapper{
   width: 56rpx;

@@ -1,12 +1,37 @@
-page {
+.page {
   display: flex;
-  
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-   text-align: center;
+  justify-content: center;
+  background-color: #fff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 200rpx;
+}
+
+.loading {
+  
+  height: 360rpx;
+  text-align: center;
+}
+
+.loading-logo {
+  width: 220rpx;
+  height: 220rpx;
+  display: block;
+  margin-bottom: 30rpx;
 }
 
 .loading-name {
-  font-size: 42rpx;
+  font-size: 50rpx;
+  font-weight: 400;
+  color: #db9019;
+  display: block;
+}
+.loading-motto{
+  font-size: 30rpx;
   font-weight: 200;
+  display: block;
 }
