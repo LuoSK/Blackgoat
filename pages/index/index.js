@@ -21,6 +21,7 @@ Page({
 
   onLoad: function() {
     app.editTabbar()
+    
   },
   onReady: function() {
     this.setData({

@@ -5,6 +5,7 @@ App({
   },
   hideTabbar: function() {
     wx.hideTabBar({
+     
       fail: function() {
         setTimeout(function() {
           wx.hideTabBar()

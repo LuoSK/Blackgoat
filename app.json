@@ -1,10 +1,14 @@
 {
   "pages": [
+    "pages/head/head",
     "pages/index/index",
+    
+   
     "pages/moments/moments",
     "pages/add/add",
     "pages/me/me",
     "templates/toast/toast"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
