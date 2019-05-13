@@ -30,14 +30,20 @@
           <view class="dateLabel">{{item.year}} 年 {{item.month}} 月 {{item.day}} 日 星期{{tool.numTochn(item.week)}} </view>
         </view>
       </view>
+
       <view class="timeline">
         <view class="timeline-wrap">
           <view class="timeline-vertical"></view>
         </view>
-
-        <view data-index="{{index}}" class="title {{ fold[index]==false ? 'active' : '' }} ">
-          <text class="title-text">{{item.title}}</text>
+        <view class='list-card'>
+          <view class='list-title'>
+            {{item.title}}
+          </view>
+          <view class='list-content'>
+            {{item.content || '什么都没有'}}
+          </view>
         </view>
+
 
       </view>
     </block>
