@@ -1,46 +1,29 @@
-.calendar {
-  width: 750rpx;
+.container {
+  padding: 20rpx;
 }
 
-.arrow {
-  width: 30rpx;
-  height: 30rpx;
-  margin: 0 30rpx;
+.userinfo-wrap {
+  margin-top: 40rpx;
+  width: 95%;
+  height: 360rpx;
+  background-color: #fff;
+  border-radius: 25rpx;
+  box-shadow: 5rpx 5rpx 8rpx 0rpx rgba(0, 0, 0, 0.1);
 }
 
-.weeklist {
-  display: block;
-}
-
-.week-style {
-  width: 14.285%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 107.1rpx;
-}
-
-.day-style {
-  width: 107.1rpx;
-  height: 107.1rpx;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-.day-radius {
+.userinfo {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-  width: 70rpx;
-  height: 70rpx;
- 
-}
-.day-click {
-  background: #f1c071;
-  border-radius: 50%;
-  color: #ffffff
 }
 
+.userinfo-avatar {
+  position: absolute;
+  top: -18rpx;
+  left: 80rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-top: 20rpx;
+  border: 5px solid #fff;
+}

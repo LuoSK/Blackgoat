@@ -13,7 +13,6 @@
   width: 100%;
 }
 
-
 .delete {
   margin-left: 25rpx;
   width: 70rpx;
@@ -83,8 +82,8 @@
 
 .dateLabel {
   border-radius: 10rpx;
-  background: #e68e66;
-  color: whitesmoke;
+  /* background: #e68e66; */
+  color: #2f2f4d;
   font-size: 14px;
   padding: 0 20rpx;
   height: 53rpx;
@@ -101,7 +100,7 @@
   padding: 20rpx;
   border-radius: 8rpx;
   box-shadow: 3rpx 3rpx 15rpx 0 rgba(0, 0, 0, 0.1);
-  width: 85%;
+  width: 83%;
   color: #2f2f4d;
 }
 
@@ -116,4 +115,6 @@
   display: block;
   font-size: 28rpx;
   padding: 20rpx 0 0 0;
+  color: #2f2f4d;
+  opacity: 0.7;
 }

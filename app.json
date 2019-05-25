@@ -2,8 +2,7 @@
   "pages": [
     "pages/head/head",
     "pages/index/index",
-    
-   
+     
     "pages/moments/moments",
     "pages/add/add",
     "pages/me/me",

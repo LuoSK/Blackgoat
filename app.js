@@ -1,7 +1,9 @@
 //app.js
 App({
   onLaunch: function() {
-    this.hideTabbar()
+    this.hideTabbar() //隐藏原生tabbar
+
+    
   },
   hideTabbar: function() {
     wx.hideTabBar({

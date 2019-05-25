@@ -16,14 +16,14 @@ Page({
     app.editTabbar();
     setTimeout(() => {
       this.openPage()
-    }, 1500)
+    }, 0)
 
   },
 
   openPage: function() {
 
     wx.switchTab({
-      url: "../index/index",
+      url: "../me/me",
       success: function(res) {
         app.hideTabbar()
       }
