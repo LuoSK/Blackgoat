@@ -3,27 +3,55 @@
 }
 
 .userinfo-wrap {
-  margin-top: 40rpx;
+  margin-top: 30rpx;
   width: 95%;
-  height: 360rpx;
+  height: 400rpx;
   background-color: #fff;
   border-radius: 25rpx;
   box-shadow: 5rpx 5rpx 8rpx 0rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30rpx;
+  box-sizing: border-box;
 }
 
-.userinfo {
+.userinfo-base {
   display: flex;
   flex-direction: row;
-  align-items: center;
+}
+
+.userinfo-todo {
+  display: flex;
+  flex-direction: row;
+}
+
+.userinfo-base-own {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
 }
 
 .userinfo-avatar {
-  position: absolute;
-  top: -18rpx;
-  left: 80rpx;
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
-  margin-top: 20rpx;
-  border: 5px solid #fff;
+}
+
+.record {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30rpx;
+}
+
+.userinfo-nickname {
+  font-size: 50rpx;
+  font-weight: 500;
+}
+
+
+.userinfo-motto {
+  font-size: 24rpx;
+  font-weight: 300;
 }

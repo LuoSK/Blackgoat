@@ -1,11 +1,23 @@
 <view class='container'>
   <view class='userinfo-wrap'>
-    <view class='userinfo'>
+    <view class='userinfo-base'>
       <image class='userinfo-avatar' src='{{userInfo.avatarUrl}}'></image>
-      <text class='userinfo-nickname'>{{userInfo.nickName}}</text>
+      <view class='userinfo-base-own'>
+        <text class='userinfo-nickname'>{{userInfo.nickName}}</text>
+        <text class='userinfo-motto'>No Motto</text>
+      </view>
+    </view>
+    <view class='userinfo-todo'>
+      <block wx:for="{{userRecord}}" wx:key="{{index}}">
+        <view class='record'>
+          <text style="font-size:60rpx;">{{item.data}}</text>
+          <text style="font-size:24rpx;">{{item.event}}</text>
+        </view>
+      </block>
     </view>
   </view>
 
 </view>
+
 <!--重写tabbar-->
 <tabbar tabbar="{{tabbar}}"></tabbar>
