@@ -21,7 +21,7 @@ Page({
 
   onLoad: function() {
     app.editTabbar()
-    
+
   },
   onReady: function() {
     this.setData({
@@ -103,7 +103,17 @@ Page({
       url: '../add/add',
     })
   },
+  tapChange: function(e) {
+    let idx = e.currentTarget.dataset.idx;
+    let flag = this.data.fold[idx]
 
+    flag = !flag;
+
+    var f_flag = 'fold[' + idx + ']'
+    this.setData({
+      [f_flag]: flag
+    })
+  },
 
 
 

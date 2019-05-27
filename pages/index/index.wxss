@@ -104,9 +104,21 @@
   color: #2f2f4d;
 }
 
+.list-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1rpx dashed #ccc;
+}
+
+.list-status {
+  font-size: 28rpx;
+  font-weight: 300;
+  margin-right: 20rpx;
+}
+
 .list-title {
   display: block;
-  border-bottom: 1rpx dashed #ccc;
   font-size: 32rpx;
   padding: 0 20rpx 20rpx 0;
 }
