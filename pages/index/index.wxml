@@ -47,7 +47,7 @@
             {{item.content || '什么都没有'}}
           </view>
         </view>
-
+        <view wx:if="{{}}></view>
 
       </view>
     </block>
@@ -56,4 +56,4 @@
 </scroll-view>
 
 <!-- Tabbar -->
-<tabbar tabbar="{{tabbar}}"></tabbar>
+<tabbar tabbar=" {{tabbar}} "></tabbar>
