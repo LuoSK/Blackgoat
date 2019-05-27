@@ -13,17 +13,6 @@
   width: 100%;
 }
 
-.delete {
-  margin-left: 25rpx;
-  width: 70rpx;
-  background: #e66671;
-  text-align: center;
-  border-radius: 11rpx;
-  font-size: 20rpx;
-  line-height: 70rpx;
-  color: #fff;
-}
-
 .timeline {
   display: flex;
   justify-content: flex-start;
@@ -129,4 +118,37 @@
   padding: 20rpx 0 0 0;
   color: #2f2f4d;
   opacity: 0.7;
+}
+
+.edit {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
+
+.handle {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete {
+  background: #e66671;
+}
+
+.complete {
+  background: #f1c071;
+}
+
+.cancel {
+  background: #c1c5c8;
+}
+
+.button_icon {
+  width: 50rpx;
+  height: 50rpx;
+  opacity: 0.9;
 }

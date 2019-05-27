@@ -36,7 +36,7 @@
           <view class="timeline-vertical"></view>
         </view>
 
-        <view class='list-card' bindlongpress='tapChange' data-idx="{{index}}" hidden='{{fold[index]}}'>
+        <view class='list-card' bindlongpress='tapChange' data-idx="{{index}}" data-id="{{item._id}}" hidden='{{fold[index]}}'>
           <view class='list-head'>
             <view class='list-title'>
               {{item.title}}
@@ -48,6 +48,17 @@
           </view>
         </view>
 
+        <view wx:if="{{fold[index]}}" class='edit'>
+          <view class='handle complete'>
+            <image class='button_icon' src='/images/complete(1).png'></image>
+          </view>
+          <view class='handle delete' data-idx="{{index}}" bindtap='handleDeleteList'>
+            <image class='button_icon' src='/images/delete(1).png'></image>
+          </view>
+          <view class='handle cancel' data-idx="{{index}}" bindtap='tapChange'>
+            <image class='button_icon' src='/images/cancel(1).png'></image>
+          </view>
+        </view>
 
       </view>
     </block>
