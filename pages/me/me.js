@@ -25,7 +25,9 @@ Page({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
+            lang: 'zh_CN',
             success: res => {
+              console.log(res.userInfo)
               this.setData({
                 userInfo: res.userInfo
               })

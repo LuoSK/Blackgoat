@@ -23,7 +23,7 @@ Page({
   openPage: function() {
 
     wx.switchTab({
-      url: "../me/me",
+      url: "../index/index",
       success: function(res) {
         app.hideTabbar()
       }

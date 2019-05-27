@@ -4,7 +4,7 @@
   <view class="tolist">
 
     <view wx:if="{{list.length == 0}}" bindtap="test" class="test">啥都没有</view>
-    <block wx:for="{{list}}" wx:key="index">
+    <block wx:for="{{list}}" wx:key="{{index}}">
       <view wx:if="{{(index != 0) && (list[index].due != list[index-1].due)}}">
         <view class="timeline">
           <view class="timeline-wrap">
@@ -35,9 +35,13 @@
         <view class="timeline-wrap">
           <view class="timeline-vertical"></view>
         </view>
-        <view class='list-card'>
-          <view class='list-title'>
-            {{item.title}}
+
+        <view class='list-card' bindlongpress='tapChange' data-idx="{{index}}" hidden='{{fold[index]}}'>
+          <view class='list-head'>
+            <view class='list-title'>
+              {{item.title}}
+            </view>
+            <view class='list-status'>待做</view>
           </view>
           <view class='list-content'>
             {{item.content || '什么都没有'}}
@@ -50,10 +54,6 @@
 
   </view>
 </scroll-view>
-<!-- Button to add a task 
-<view class="add-button" bindtap='addtap'>
-  <image src="/images/addition.png" class="add-style"></image>
-</view>
-//添加按钮-->
+
 <!-- Tabbar -->
 <tabbar tabbar="{{tabbar}}"></tabbar>

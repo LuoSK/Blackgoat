@@ -10,8 +10,8 @@
     <view class='userinfo-todo'>
       <block wx:for="{{userRecord}}" wx:key="{{index}}">
         <view class='record'>
-          <text style="font-size:60rpx;">{{item.data}}</text>
-          <text style="font-size:24rpx;">{{item.event}}</text>
+          <text style="font-size:60rpx;opacity:0.7;font-weight:400;">{{item.data}}</text>
+          <text style="font-size:24rpx;opacity:0.7;">{{item.event}}</text>
         </view>
       </block>
     </view>
