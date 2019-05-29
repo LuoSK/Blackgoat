@@ -122,9 +122,10 @@ Page({
       data: {
         done: true
       }
-    }).then(success => {
-      console.log('successed')
     })
+    db.collection('userinfo').get().then(res => {
+
+    }).catch(console.log('failed!'))
 
 
 
@@ -139,7 +140,6 @@ Page({
     let index = e.currentTarget.dataset.idx,
       id = e.currentTarget.dataset.id,
       list = this.data.list
-
     list.splice(index, 1)
     this.setData({
       list: list,

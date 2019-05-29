@@ -16,7 +16,7 @@ Page({
     app.editTabbar();
     setTimeout(() => {
       this.openPage()
-    }, 0)
+    }, 1500)
 
   },
 
