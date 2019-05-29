@@ -25,7 +25,6 @@ Page({
     this.setData({
       fold: []
     })
-
   },
   onReady: function() {
     this.setData({
@@ -87,18 +86,7 @@ Page({
     })
   },
 
-  /*任务卡片展开*/
-  rotateAnim: function(e) {
 
-    let idx = e.target.dataset.index;
-    let flag = this.data.fold[idx]
-
-    flag = flag == false ? true : false;
-    var f_flag = 'fold[' + idx + ']'
-    this.setData({
-      [f_flag]: flag
-    })
-  },
   /*添加任务*/
   addtap: function() {
 
@@ -119,7 +107,28 @@ Page({
   },
 
 
+  handleDoneList: function(e) {
+    wx.cloud.init()
+    const db = wx.cloud.database()
+    let index = e.currentTarget.dataset.idx,
+      id = e.currentTarget.dataset.id,
+      list = this.data.list
+    var f_list = 'list[' + index + '].done'
+    this.setData({
+      [f_list]: true,
+      fold: []
+    })
+    db.collection('todos').doc(id).update({
+      data: {
+        done: true
+      }
+    }).then(success => {
+      console.log('successed')
+    })
 
+
+
+  },
 
 
 

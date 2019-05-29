@@ -36,12 +36,14 @@
           <view class="timeline-vertical"></view>
         </view>
 
-        <view class='list-card' bindlongpress='tapChange' data-idx="{{index}}" data-id="{{item._id}}" hidden='{{fold[index]}}'>
+        <view class='list-card' bindlongpress='tapChange' data-idx="{{index}}" hidden='{{fold[index]}}'>
           <view class='list-head'>
             <view class='list-title'>
               {{item.title}}
             </view>
-            <view class='list-status'>待做</view>
+            <view wx:if="{{item.done == false}}" class='list-status'>待做</view>
+            <view wx:elif="{{item.done == true}}" class='list-status'>已完成</view>
+            <view wx:else class='list-status'>失败</view>
           </view>
           <view class='list-content'>
             {{item.content || '什么都没有'}}
@@ -49,10 +51,10 @@
         </view>
 
         <view wx:if="{{fold[index]}}" class='edit'>
-          <view class='handle complete'>
+          <view class='handle complete' data-idx="{{index}}" data-id="{{item._id}}" bindtap='handleDoneList'>
             <image class='button_icon' src='/images/complete(1).png'></image>
           </view>
-          <view class='handle delete' data-idx="{{index}}" bindtap='handleDeleteList'>
+          <view class='handle delete' data-idx="{{index}}" data-id="{{item._id}}" bindtap='handleDeleteList'>
             <image class='button_icon' src='/images/delete(1).png'></image>
           </view>
           <view class='handle cancel' data-idx="{{index}}" bindtap='tapChange'>
