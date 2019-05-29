@@ -163,19 +163,28 @@ Page({
     db.collection('userinfo').get().then(res => {
       var uInfo = res.data,
         id = uInfo[0]._id,
-        tUnfinished = uInfo[0].unfinished - 1,
+        tUnfinished = uInfo[0].unfinished,
         tCompleted = uInfo[0].completed,
         tTotal = uInfo[0].total - 1,
         tPercent = uInfo[0].percent
-      if (tTotal = 0) {
+      if (e.currentTarget.dataset.status) {
+        tCompleted = tCompleted - 1
+      } else {
+        tUnfinished = tUnfinished - 1
+      }
+      if (tTotal == 0) {
         tPercent = 0
+
+      } else {
+        tPercent = tCompleted / tTotal
       }
 
       db.collection('userinfo').doc(id).update({
         data: {
           unfinished: tUnfinished,
           completed: tCompleted,
-          percent: tPercent
+          percent: tPercent,
+          total: tTotal
         }
       })
     })

@@ -54,7 +54,7 @@
           <view class='handle complete' data-idx="{{index}}" data-id="{{item._id}}" bindtap='handleDoneList'>
             <image class='button_icon' src='/images/complete(1).png'></image>
           </view>
-          <view class='handle delete' data-idx="{{index}}" data-id="{{item._id}}" bindtap='handleDeleteList'>
+          <view class='handle delete' data-status="{{item.done}}" data-idx="{{index}}" data-id="{{item._id}}" bindtap='handleDeleteList'>
             <image class='button_icon' src='/images/delete(1).png'></image>
           </view>
           <view class='handle cancel' data-idx="{{index}}" bindtap='tapChange'>
