@@ -132,7 +132,7 @@ Page({
         tCompleted = uInfo[0].completed + 1,
         tTotal = uInfo[0].total,
         tPercent = tCompleted / tTotal
-      console.log(tUnfinished)
+
       db.collection('userinfo').doc(id).update({
         data: {
           unfinished: tUnfinished,
@@ -159,6 +159,25 @@ Page({
     this.setData({
       list: list,
       fold: []
+    })
+    db.collection('userinfo').get().then(res => {
+      var uInfo = res.data,
+        id = uInfo[0]._id,
+        tUnfinished = uInfo[0].unfinished - 1,
+        tCompleted = uInfo[0].completed,
+        tTotal = uInfo[0].total - 1,
+        tPercent = uInfo[0].percent
+      if (tTotal = 0) {
+        tPercent = 0
+      }
+
+      db.collection('userinfo').doc(id).update({
+        data: {
+          unfinished: tUnfinished,
+          completed: tCompleted,
+          percent: tPercent
+        }
+      })
     })
     let that = this;
     wx.createSelectorQuery().select('.static').boundingClientRect(function(res) {
