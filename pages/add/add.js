@@ -366,19 +366,53 @@ Page({
             day: new Date(this.data.due[i]).getDate(),
             week: new Date(this.data.due[i]).getDay()
           },
-          success: function(res) {
 
-          }
         })
-        // this.data.list = [{
-        //  due: this.data.due[i],
-        //  done: false,
-        // title: this.data.titlevalue
-        //}].concat(this.data.list)
-
-
-
       }
+
+      //更新用户数据
+      testDB.collection('userinfo').get().then(res => {
+        if (res.data.length == 0) {
+          testDB.collection('userinfo').add({
+            data: {
+              unfinished: this.data.due.length,
+              total: this.data.due.length,
+              completed: 0,
+              percent: 0
+            }
+          })
+        } else {
+
+          var uInfo = res.data,
+            id = uInfo[0]._id,
+            tUnfinished = uInfo[0].unfinished + this.data.due.length,
+            tTotal = uInfo[0].total + this.data.due.length,
+            tPercent = (tTotal - tUnfinished) / tTotal
+         
+          testDB.collection('userinfo').doc(id).update({
+
+            data: {
+              unfinished: tUnfinished,
+              total: tTotal,
+              percent: tPercent
+            }
+          })
+        }
+      })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       ///再次获取//
       testDB.collection('todos').count({
         success: res => {
@@ -417,9 +451,10 @@ Page({
         ScrollNum: 0,
         'fold': []
       })
+
       wx.navigateBack({})
     } else {
-      console.log('No!')
+
       this.setData({
         toastHidden: false
       })

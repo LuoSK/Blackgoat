@@ -123,9 +123,24 @@ Page({
         done: true
       }
     })
-    db.collection('userinfo').get().then(res => {
 
-    }).catch(console.log('failed!'))
+
+    db.collection('userinfo').get().then(res => {
+      var uInfo = res.data,
+        id = uInfo[0]._id,
+        tUnfinished = uInfo[0].unfinished - 1,
+        tCompleted = uInfo[0].completed + 1,
+        tTotal = uInfo[0].total,
+        tPercent = tCompleted / tTotal
+      console.log(tUnfinished)
+      db.collection('userinfo').doc(id).update({
+        data: {
+          unfinished: tUnfinished,
+          completed: tCompleted,
+          percent: tPercent
+        }
+      })
+    })
 
 
 
